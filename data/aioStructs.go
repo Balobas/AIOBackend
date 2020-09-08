@@ -1,7 +1,12 @@
 package data
 
+/*
+Структуры
+ */
+
 import "github.com/dgrijalva/jwt-go"
 
+//Аккаунт пользователя в приложении
 type User struct {
 	UID      UID    `json:"uid"`
 	Name     string `json:"name"`
@@ -16,17 +21,20 @@ type User struct {
 	Token string `json:"token"`
 }
 
+//Пароль пользователя
 type UserPassword struct {
 	UserUID UID `json:"userUid"`
 	Password string `json:"password"`
 }
 
+//Социальная сеть
 type SocialNetwork struct {
 	UID       UID    `json:"uid"`
 	Name      string `json:"name"`
 	ShortName string `json:"shortName"`
 }
 
+//Аккаунт пользователя в социальной сети
 type SocialNetworkAccount struct {
 	UID              UID    `json:"uid"`
 	SocialNetworkUid UID    `json:"socialNetUid"`
@@ -38,10 +46,12 @@ type SocialNetworkAccount struct {
 	Link             string `json:"link"`
 }
 
+//Настройки аккаунта
 type UserSettings struct {
 	UserUID UID `json:"userUid"`
 }
 
+//Токен доступа
 type AccessToken struct {
 	UserUid UID `json:"userUid"`
 	jwt.StandardClaims

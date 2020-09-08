@@ -7,6 +7,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+//Удаление пользователя по uid. Аккаунт пользователя не удаляется, лишь помечается как удаленный
 func DeleteUser(database database.Database, uid data.UID) error {
 	if string(uid) == "" {
 		return errors.New("Empty user uid")

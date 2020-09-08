@@ -1,5 +1,9 @@
 package utils
 
+/*
+Обертка над ответами сервера
+ */
+
 import (
 	"encoding/json"
 	"net/http"

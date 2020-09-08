@@ -7,6 +7,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+//Получение социальной сети по uid
 func GetSocialNetwork(database database.Database, uid data.UID) (data.SocialNetwork, bool,  error) {
 	if !uid.IsCorrect() {
 		return data.SocialNetwork{}, false, errors.New("Invalid uid format ")

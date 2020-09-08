@@ -6,6 +6,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+//Восстановление аккаунта пользователя
 func BackupUser(database database.Database, userUid data.UID) error {
 	user, isFound, err := GetUser(database, userUid)
 	if err != nil {

@@ -1,5 +1,9 @@
 package authorization
 
+/*
+Авторизация пользователя
+ */
+
 import (
 	"../../database"
 	"../users"

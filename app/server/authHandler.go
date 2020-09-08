@@ -1,15 +1,17 @@
 package server
 
 import (
+	"../../data"
+	u "../utils"
 	"context"
-	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"net/http"
 	"os"
-	u "../utils"
 	"strings"
-	"../../data"
 )
+/*
+Промежуточный слой аутентификации
+ */
 
 func JwtAuthentication(next http.Handler) http.Handler {
 	return http.HandlerFunc(func (w http.ResponseWriter, r *http.Request) {
@@ -53,7 +55,6 @@ func JwtAuthentication(next http.Handler) http.Handler {
 			u.Respond(w, response)
 			return
 		}
-		fmt.Sprintf("User %", tk.UserUid)
 		ctx := context.WithValue(r.Context(), "user", tk.UserUid)
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r)

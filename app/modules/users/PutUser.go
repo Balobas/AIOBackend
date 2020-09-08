@@ -8,6 +8,7 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
+//Добавление/Изменение аккаунта пользователя
 func PutUser(database database.Database, user data.User) (data.UID, error) {
 	var (
 		isFound bool

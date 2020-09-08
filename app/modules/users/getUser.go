@@ -7,6 +7,7 @@ import (
 	"errors"
 )
 
+//Получение пользователя по uid
 func GetUser(database database.Database, uid data.UID) (data.User, bool, error) {
 	if !uid.IsCorrect() {
 		return data.User{}, false, errors.New("Invalid uid format ")

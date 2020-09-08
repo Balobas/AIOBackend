@@ -1,5 +1,10 @@
 package database
 
+/*
+Обертка пакета "github.com/leesper/couchdb-golang"
+ */
+
+
 import (
 	"fmt"
 	"github.com/leesper/couchdb-golang"

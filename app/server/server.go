@@ -1,5 +1,9 @@
 package server
 
+/*
+основная часть сервера
+ */
+
 import (
 	"fmt"
 	"github.com/gorilla/schema"

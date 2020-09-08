@@ -8,6 +8,9 @@ import (
 	//"log"
 	"net/http"
 )
+/*
+Маршрутизация запросов
+ */
 
 func Route(w http.ResponseWriter, r *http.Request) {
 	url := r.URL.Path

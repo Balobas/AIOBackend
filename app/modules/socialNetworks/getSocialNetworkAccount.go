@@ -7,6 +7,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+//Получение аккаунта в социальной сети по id
 func GetSocialNetworkAccount(database database.Database, uid data.UID) (data.SocialNetworkAccount, bool, error) {
 	if !uid.IsCorrect() {
 		return data.SocialNetworkAccount{}, false, errors.New("Invalid uid format ")

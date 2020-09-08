@@ -1,5 +1,9 @@
 package data
 
+/*
+Базовые типы данных
+ */
+
 import (
 	uuid "github.com/satori/go.uuid"
 )

@@ -6,6 +6,11 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+/*
+Регистрация пользователя. Отличие от добавления пользователя в том,
+что при регистрации отдельно создается аккаунт пользователя и отдельно структура пароля.
+
+ */
 func RegisterUser(database database.Database, user data.User, password string) (data.UID, error) {
 	uid, err := PutUser(database, user)
 	if err != nil {

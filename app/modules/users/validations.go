@@ -6,6 +6,9 @@ import (
 	"regexp"
 )
 
+/*
+Валидация данных пользователя
+ */
 func ValidateUser(user *data.User) error {
 	if user.Login == "" {
 		return errors.New("Error: empty login ")
@@ -30,6 +33,10 @@ func ValidateUser(user *data.User) error {
 	return nil
 }
 
+
+/*Валидация телефона пользователя. По телефону возвращается локация.
+Если регион не поддерживается,то возвращается ошибка.
+ */
 func ValidatePhoneByLocation(number string) (string, error) {
 	for pattern, country := range data.PhonesMap {
 		if ok, err := regexp.MatchString(pattern, number); err != nil {

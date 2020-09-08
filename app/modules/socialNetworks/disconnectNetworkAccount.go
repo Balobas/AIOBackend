@@ -6,6 +6,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+//Удаление соц сети из списка аккаунтов пользователя
 func DisconnectSocialNetworkAccount(database database.Database, account data.SocialNetworkAccount) error {
 	uid := account.UID
 	if uid == "" {
