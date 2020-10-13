@@ -5,28 +5,29 @@ import (
 	"../../database"
 	"encoding/json"
 	"github.com/pkg/errors"
+	"../../models"
 )
 
 //Получение социальной сети по uid
-func GetSocialNetwork(database database.Database, uid data.UID) (data.SocialNetwork, bool,  error) {
+func GetSocialNetwork(database database.Database, uid data.UID) (models.SocialNetwork, bool,  error) {
 	if !uid.IsCorrect() {
-		return data.SocialNetwork{}, false, errors.New("Invalid uid format ")
+		return models.SocialNetwork{}, false, errors.New("Invalid uid format ")
 	}
 	fieldsMap, err := database.Get(string(uid))
 	if err != nil {
-		return data.SocialNetwork{}, false, err
+		return models.SocialNetwork{}, false, err
 	}
 	if fieldsMap == nil {
-		return data.SocialNetwork{}, false, nil
+		return models.SocialNetwork{}, false, nil
 	}
-	var network data.SocialNetwork
+	var network models.SocialNetwork
 	bytes, err  := json.Marshal(fieldsMap)
 	if err != nil {
-		return data.SocialNetwork{}, false, err
+		return models.SocialNetwork{}, false, err
 	}
 	err = json.Unmarshal(bytes, &network)
 	if err != nil {
-		return data.SocialNetwork{}, false, err
+		return models.SocialNetwork{}, false, err
 	}
 	return network, true, nil
 }

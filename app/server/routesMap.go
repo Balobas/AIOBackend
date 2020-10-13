@@ -1,7 +1,7 @@
 package server
 
 import (
-	api "../../AIO_API"
+	api "../AIO_API"
 )
 
 /*

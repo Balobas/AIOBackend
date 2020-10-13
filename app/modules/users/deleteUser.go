@@ -3,6 +3,7 @@ package users
 import (
 	"../../../data"
 	"../../database"
+	"../../models"
 	"encoding/json"
 	"github.com/pkg/errors"
 )
@@ -22,7 +23,7 @@ func DeleteUser(database database.Database, uid data.UID) error {
 	if len(result) == 0 {
 		return errors.New("user not found")
 	}
-	user := data.User{}
+	user := models.User{}
 	bytes, _ := json.Marshal(result)
 	if json.Unmarshal(bytes, &user) != nil {
 		return errors.New("Unmarshalling error")

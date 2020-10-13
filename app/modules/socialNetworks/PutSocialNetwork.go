@@ -5,10 +5,11 @@ import (
 	"../../database"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
+	"../../models"
 )
 
 //Добавление/Изменение соц сети
-func PutSocialNetwork(database database.Database, network data.SocialNetwork) (data.UID, error) {
+func PutSocialNetwork(database database.Database, network models.SocialNetwork) (data.UID, error) {
 	if network.UID == "" {
 		uid, err := uuid.NewV4()
 		if err != nil {

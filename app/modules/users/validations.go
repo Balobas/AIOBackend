@@ -2,6 +2,7 @@ package users
 
 import (
 	"../../../data"
+	"../../models"
 	"errors"
 	"regexp"
 )
@@ -9,7 +10,7 @@ import (
 /*
 Валидация данных пользователя
  */
-func ValidateUser(user *data.User) error {
+func ValidateUser(user *models.User) error {
 	if user.Login == "" {
 		return errors.New("Error: empty login ")
 	}

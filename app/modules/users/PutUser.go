@@ -3,16 +3,17 @@ package users
 import (
 	"../../../data"
 	"../../database"
+	"../../models"
 	"errors"
 	"fmt"
 	uuid "github.com/satori/go.uuid"
 )
 
 //Добавление/Изменение аккаунта пользователя
-func PutUser(database database.Database, user data.User) (data.UID, error) {
+func PutUser(database database.Database, user models.User) (data.UID, error) {
 	var (
 		isFound bool
-		savedUser data.User
+		savedUser models.User
 		err error
 	)
 	if user.UID == "" {

@@ -5,10 +5,11 @@ import (
 	"../../database"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
+	"../../models"
 )
 
 //Добавление аккаунта соц сети в список аккаунтов пользователя
-func ConnectSocialNetworkAccount(database database.Database, account data.SocialNetworkAccount, userUID data.UID) (data.UID, error) {
+func ConnectSocialNetworkAccount(database database.Database, account models.SocialNetworkAccount, userUID data.UID) (data.UID, error) {
 	if !userUID.IsCorrect() {
 		return "", errors.New("User uid is not correct ")
 	}
