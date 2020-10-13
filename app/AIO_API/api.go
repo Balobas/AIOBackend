@@ -8,10 +8,10 @@ package AIO_API
 
 
 import (
-	"../app/database"
-	"../app/modules/socialNetworks"
-	"../app/modules/users"
-	"../data"
+	"../database"
+	"../modules/socialNetworks"
+	"../modules/users"
+	"../../data"
 	"encoding/json"
 	"github.com/gorilla/schema"
 )
